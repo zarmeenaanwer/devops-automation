@@ -10,6 +10,12 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+        stage('Build docker image'){
+            steps{
+                script{
+                    sh 'docker build -t zarmeena/devops-integration .'
+                }
+            }
         
     }
     
